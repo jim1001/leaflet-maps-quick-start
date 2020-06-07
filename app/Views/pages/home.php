@@ -62,6 +62,18 @@ function onMapClick(e) {
 
 mymap.on('click', onMapClick);	
 
+/* Add a popup event (appears to negate alert event above) */
+var popup = L.popup();
+
+function onMapClick(e) {
+    popup
+        .setLatLng(e.latlng)
+        .setContent("You clicked the map at " + e.latlng.toString())
+        .openOn(mymap);
+}
+
+mymap.on('click', onMapClick);
+
 
 
  </script>
