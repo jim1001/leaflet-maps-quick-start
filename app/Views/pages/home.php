@@ -27,6 +27,14 @@
 /* Add a marker */
 var marker = L.marker([51.5, -0.09]).addTo(mymap);
 
+/* Add a circle */
+var circle = L.circle([51.508, -0.11], {
+    color: 'orange',
+    fillColor: '#f03',
+    fillOpacity: 0.5,
+    radius: 500
+}).addTo(mymap);
+
 
  </script>
 
