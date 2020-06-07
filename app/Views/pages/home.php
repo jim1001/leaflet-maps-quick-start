@@ -36,7 +36,6 @@ var circle = L.circle([51.508, -0.11], {
 }).addTo(mymap);
 
 /* Add a polygon */
-
 var polygon = L.polygon([
     [51.509, -0.08],
     [51.503, -0.06],
@@ -44,7 +43,11 @@ var polygon = L.polygon([
 	],
 	{ color: 'red'
 	}).addTo(mymap);
-
+	
+/* Add popups to objects added above */
+marker.bindPopup("<b>Hello world!</b><br>I am a popup.").openPopup();
+circle.bindPopup("I am a circle.");
+polygon.bindPopup("I am a polygon.");
 
  </script>
 
