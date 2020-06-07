@@ -24,6 +24,10 @@
     accessToken: 'your.mapbox.access.token'
 }).addTo(mymap);
 
+/* Add a marker */
+var marker = L.marker([51.5, -0.09]).addTo(mymap);
+
+
  </script>
 
 
