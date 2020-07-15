@@ -35,8 +35,17 @@ var marker2 = L.marker([51.52, -0.092]).addTo(mymap);
 
 /* Add popups to objects added above */
 marker2.bindPopup("Marker2");
+</script>
 
- </script>
+<div><p><button onclick="changePopUp()">Change popup</button></p></div>
+
+<script>
+function changePopUp() {
+    marker1.setPopupContent("Marker1 changed");
+}
+</script>
+ 
+ 
 
 
 
