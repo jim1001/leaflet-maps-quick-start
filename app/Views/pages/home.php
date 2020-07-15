@@ -41,7 +41,10 @@ marker2.bindPopup("Marker2");
 
 <script>
 function changePopUp() {
-    marker1.setPopupContent("Marker1 changed");
+    //marker1.setPopupContent("Marker1 changed");
+    var popup1 = marker1.getPopup();
+    var content1 = popup1.getContent();
+    alert("marker1 popup says: " + content1)
 }
 </script>
  
