@@ -25,10 +25,16 @@
 }).addTo(mymap);
 
 /* Add a marker */
-var marker = L.marker([51.5, -0.09]).addTo(mymap);
-	
+var marker1 = L.marker([51.5, -0.09]).addTo(mymap);
+
 /* Add popups to objects added above */
-marker.bindPopup("<b>Hello world!</b><br>I am a popup.").openPopup();
+marker1.bindPopup("Marker1");
+
+/* Add a marker */
+var marker2 = L.marker([51.52, -0.092]).addTo(mymap);
+
+/* Add popups to objects added above */
+marker2.bindPopup("Marker2");
 
  </script>
 
