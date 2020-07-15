@@ -26,55 +26,9 @@
 
 /* Add a marker */
 var marker = L.marker([51.5, -0.09]).addTo(mymap);
-
-/* Add a circle */
-var circle = L.circle([51.508, -0.11], {
-    color: 'orange',
-    fillColor: '#f03',
-    fillOpacity: 0.5,
-    radius: 500
-}).addTo(mymap);
-
-/* Add a polygon */
-var polygon = L.polygon([
-    [51.509, -0.08],
-    [51.503, -0.06],
-    [51.51, -0.047],
-	],
-	{ color: 'red'
-	}).addTo(mymap);
 	
 /* Add popups to objects added above */
 marker.bindPopup("<b>Hello world!</b><br>I am a popup.").openPopup();
-circle.bindPopup("I am a circle.");
-polygon.bindPopup("I am a polygon.");
-
-/* Use popup as layer */
-var popup = L.popup()
-    .setLatLng([51.5, -0.09])
-    .setContent("I am a standalone popup.")
-    .openOn(mymap);
-	
-/* Add an alert event */
-function onMapClick(e) {
-    alert("You clicked the map at " + e.latlng);
-}
-
-mymap.on('click', onMapClick);	
-
-/* Add a popup event (appears to negate alert event above) */
-var popup = L.popup();
-
-function onMapClick(e) {
-    popup
-        .setLatLng(e.latlng)
-        .setContent("You clicked the map at " + e.latlng.toString())
-        .openOn(mymap);
-}
-
-mymap.on('click', onMapClick);
-
-
 
  </script>
 
