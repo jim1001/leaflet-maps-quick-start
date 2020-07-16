@@ -28,8 +28,7 @@
 var marker1 = L.marker([51.5, -0.09]).addTo(mymap);
 
 /* Add popups to objects added above */
-var phrase1="no phrase"
-marker1.bindPopup("Selected phrase: " + phrase1);
+marker1.bindPopup("<b>Sample key: </b>BG-008<br><b>Selected phrase: </b>none");
 
 /* Add a marker */
 var marker2 = L.marker([51.52, -0.092]).addTo(mymap);
@@ -46,8 +45,10 @@ function changePopUp() {
     var popup1 = marker1.getPopup();
     var content1 = popup1.getContent();
     //alert("marker1 popup says: " + content1)
-    var selPhrase="boy"
-    popup1.setContent("Selected phrase: " + selPhrase);
+    var selPhrase="boy";
+    //Replace text "Selected phrase" to end of line with "Selected phrase..." + new phrase
+    var newContent = content1.replace(/Selected phrase.*$/, "Selected phrase: </b>"+ selPhrase)
+    popup1.setContent(newContent);
 }
 </script>
  
