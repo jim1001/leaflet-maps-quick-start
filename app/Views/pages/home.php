@@ -9,6 +9,9 @@
    integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
    crossorigin=""></script>
 
+   <script src="<?php echo base_url('assets/LeafletSvgShapeMarkers/dist/leaflet-svg-shape-markers.min.js'); ?>"></script>
+  
+
  <div id="mapid"> </div>
  <script>
  /* Initialize the map and set its view to our chosen geographical coordinates and a zoom level */
@@ -41,6 +44,26 @@ myLayerGroup.addLayer(marker2);
 myLayerGroup.addTo(mymap);
 
 var phrases = ["rom1", "rom2"];
+
+/* Add marker using leaflet-svg-shape-markers library */
+/* https://github.com/rowanwins/Leaflet.SvgShapeMarkers */
+var square = L.shapeMarker([51.505, -0.093], {
+		shape: "square",
+    color:"red",
+    fillOpacity:1,
+		radius: 10
+	}).addTo(mymap)
+
+  /* Add marker using shape, color arrays */
+  var colors = ["green", "yellow"];
+  var shapes = ["triangle", "diamond"];
+
+  L.shapeMarker([51.505, -0.094], {
+		shape: shapes[0],
+    color: colors[0],
+    fillOpacity:1,
+		radius: 10
+	}).addTo(mymap)
 
 </script>
 
