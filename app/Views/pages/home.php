@@ -1,17 +1,10 @@
 <!-- Ref: https://leafletjs.com/examples/quick-start/ -->
-<!-- Access token for mapbox - see my keepass for mapbox signon
+<!-- Access token for mapbox - see my keepass for mapbox signon -->
 
 
 
 
-<!-- Make sure you put this AFTER Leaflet's CSS -->
-<script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
-    integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
-    crossorigin=""></script>
 
-<!-- This picks up .js from <app-home>/assets/... 
-where assets/ folder is at same level as app/ folder -->
-<script src="<?php echo base_url('assets/LeafletSvgShapeMarkers/dist/leaflet-svg-shape-markers.min.js'); ?>"></script>
 
 
 <div id="mapid"> </div>
@@ -67,7 +60,32 @@ L.shapeMarker([51.505, -0.094], {
     fillOpacity: 1,
     radius: 10
 }).addTo(mymap)
+
+/* Try adding another two markers at same location
+and marker cluster plugin */
+var markers = L.markerClusterGroup();
+markers.addLayer(L.shapeMarker([51.52, -0.092], {
+    shape: "circle",
+    color: "black",
+    fillOpacity: 1,
+    radius: 10
+}));
+markers.addLayer(L.shapeMarker([51.52, -0.092], {
+    shape: "diamond",
+    color: "white",
+    fillOpacity: 1,
+    radius: 10
+}));
+mymap.addLayer(markers);
+
 </script>
+
+
+
+
+
+
+
 
 <div>
     <p><button onclick="changePopUp(myLayerGroup, phrases)">Change popup</button></p>
