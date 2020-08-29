@@ -61,21 +61,37 @@ L.shapeMarker([51.505, -0.094], {
     radius: 10
 }).addTo(mymap)
 
-/* Try adding another two markers at same location
-and marker cluster plugin */
+/* Try adding two markers at same location
+with marker cluster plugin */
 var markers = L.markerClusterGroup();
-markers.addLayer(L.shapeMarker([51.52, -0.092], {
+
+marker = L.shapeMarker([51.51, -0.098], {
     shape: "circle",
     color: "black",
     fillOpacity: 1,
     radius: 10
-}));
-markers.addLayer(L.shapeMarker([51.52, -0.092], {
+});
+marker.bindPopup("This is a black circle shapeMarker");
+markers.addLayer(marker);
+
+marker = L.shapeMarker([51.51, -0.098], {
+    shape: "diamond",
+    color: "white",
+    fillOpacity: 1,
+    radius: 10
+});
+marker.bindPopup("This is a white diamond shapeMarker");
+markers.addLayer(marker);
+
+/*
+markers.addLayer(L.shapeMarker([51.51, -0.098], {
     shape: "diamond",
     color: "white",
     fillOpacity: 1,
     radius: 10
 }));
+*/
+
 mymap.addLayer(markers);
 
 </script>
